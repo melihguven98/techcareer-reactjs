@@ -1,11 +1,13 @@
 //import logo from './logo.svg';
 //import './App.css';
 
-import ArrayStateSample from "./stateSample/ArrayStateSample";
+import CategoryTable from "./stateSample/CategoryTable";
 
 
 //---------------- TECHCAREER
 
+//import ArrayStateSample from "./stateSample/ArrayStateSample";
+//import InputStateSample from "./stateSample/InputStateSample";
 //import StateSample from "./stateSample/StateSample"
 //import StateSample2 from "./stateSample/StateSample2"
 //import JsxElement from "./jsxSample/JsxElement";
@@ -19,10 +21,12 @@ import ArrayStateSample from "./stateSample/ArrayStateSample";
 //import Header from "./template-1/Header";
 //import NavBar from "./template-1/NavBar";
 
+
+
 function App() {
   return (
     <>
-      <ArrayStateSample />
+      <CategoryTable />
     </>
   );
 }
