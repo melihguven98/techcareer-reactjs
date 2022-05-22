@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 //import './App.css';
 
+import AddCategory from "./fetchSample/AddCategory";
+import UserList from "./fetchSample/UserList";
 import CategoryTable from "./stateSample/CategoryTable";
 
 
@@ -21,12 +23,13 @@ import CategoryTable from "./stateSample/CategoryTable";
 //import Header from "./template-1/Header";
 //import NavBar from "./template-1/NavBar";
 
-
+import AddCategoryWithAxios from "./fetchSample/AddCategoryWithAxios"
 
 function App() {
   return (
     <>
-      <CategoryTable />
+      <AddCategoryWithAxios />
+      
     </>
   );
 }
