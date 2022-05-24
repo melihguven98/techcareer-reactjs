@@ -16,7 +16,7 @@ function UserList() {
         //HTTP GET metodu ile veri çekiliyor (default olarak fetch GET isteği yapıyor.)
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => {
-                return response.json()
+                return response.json() //return bir sonraki then'e atar
             })
             .then(data => {
                 setTimeout(() => {
