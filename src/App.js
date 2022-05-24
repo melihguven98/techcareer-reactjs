@@ -34,7 +34,7 @@ import CategoryTable from "./stateSample/CategoryTable";
 //import NavBar from "./template-1/NavBar";
 
 
-
+import SearchTwoButton from './Tasks/SearchTask/SearchTwoButton'
 
 /* 
      <h1>----- Site Header -----</h1>
@@ -49,11 +49,10 @@ import CategoryTable from "./stateSample/CategoryTable";
 */
 
 
-
 function App() {
   return (
     <>
-      <ProductList />       
+        <SearchTwoButton></SearchTwoButton>
     </>
   );
 }
