@@ -1,20 +1,26 @@
 //import logo from './logo.svg';
 //import './App.css';
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, Link } from "react-router-dom"
 
 
 //---------------- TECHCAREER
 
-import AddCategory from "./fetchSample/AddCategory";
-import ProductList from "./fetchSample/ProductList";
-import UserList from "./fetchSample/UserList";
-import CategoryTable from "./stateSample/CategoryTable";
 
+
+//import SearchTwoButton from './tasks/SearchTask/SearchTwoButton'
+//import AddCategory from "./fetchSample/AddCategory";
+//import ProductList from "./fetchSample/ProductList";
+//import UserList from "./fetchSample/UserList";
+//import CategoryTable from "./stateSample/CategoryTable";
 //import EffectSample from "./effectSample/EffectSample";
 //import AddCategoryWithAxios from "./fetchSample/AddCategoryWithAxios"
-//import HomePage from "./routerSample/HomePage";
-//import AboutPage from "./routerSample/AboutPage";
-//import ContactPage from "./routerSample/ContactPage";
+import HomePage from "./routerSample/HomePage";
+import AboutPage from "./routerSample/AboutPage";
+import ContactPage from "./routerSample/ContactPage";
+import NoMatch from "./routerSample/NoMatch";
+import ProductList from "./routerSample/ProductList";
+import ProductDetail from "./routerSample/ProductDetail";
+import DataDisplay from "./materialSample/DataDisplay";
 //import ProductDetail from "./propsSample/ProductDetail";
 //import PropClickEventSample from "./propsSample/PropClickEventSample";
 //import SupplierList from "./propsSample/SupplierList";
@@ -34,27 +40,32 @@ import CategoryTable from "./stateSample/CategoryTable";
 //import NavBar from "./template-1/NavBar";
 
 
-import SearchTwoButton from './Tasks/SearchTask/SearchTwoButton'
-
-/* 
-     <h1>----- Site Header -----</h1>
-
-        <Routes>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='/hakkimizda' element={<AboutPage />}></Route>
-          <Route path='/iletisim' element={<ContactPage />}></Route>
-        </Routes>
-
-      <h1>----- Site Footer -----</h1>   
-*/
-
 
 function App() {
-  return (
-    <>
-        <SearchTwoButton></SearchTwoButton>
-    </>
-  );
+  return (<>
+      <h1>----- Site Header -----</h1>
+
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/hakkimizda'>About</Link></li>
+        <li><Link to='/iletisim'>Contact</Link></li>
+        <li><Link to='/urunler'>Products</Link></li>
+        <li><Link to='/datadisplay'>Material Data Display</Link></li>
+      </ul>
+
+
+
+      <Routes>
+        <Route path='/' element={<HomePage />}></Route>
+        <Route path='/hakkimizda' element={<AboutPage />}></Route>
+        <Route path='/iletisim' element={<ContactPage />}></Route>
+        <Route path='/urunler' element={<ProductList />}></Route>
+        <Route path='/urunler/:id' element={<ProductDetail />}></Route>
+        <Route path='/datadisplay' element={<DataDisplay />}></Route>
+        <Route path='*' element={<NoMatch />}></Route>
+      </Routes>
+      <h1>----- Site Footer -----</h1>
+      </>);
 }
 
 export default App;
