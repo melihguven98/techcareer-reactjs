@@ -23,6 +23,9 @@ import ProductDetail from "./routerSample/ProductDetail";
 import DataDisplay from "./materialSample/DataDisplay";
 import ProductDataGrid from "./materialSample/ProductDataGrid";
 import AutocomplateSample from "./materialSample/AutocomplateSample";
+import { useContext } from "react";
+import { cartContext } from "./store/cartContext";
+import CartPage from "./routerSample/CartPage";
 //import ProductDetail from "./propsSample/ProductDetail";
 //import PropClickEventSample from "./propsSample/PropClickEventSample";
 //import SupplierList from "./propsSample/SupplierList";
@@ -44,8 +47,24 @@ import AutocomplateSample from "./materialSample/AutocomplateSample";
 
 
 function App() {
+
+  
+
+  //context'i kullanma
+  const {cart, setCart} = useContext(cartContext);
+  //? eslint-disable-next-line
+
+  //* Toplam Yazıdırma
+  let totalPrice = 0;
+
+  cart.forEach(e => {
+      totalPrice = totalPrice + (e.price * e.quantity)
+  });
+  
   return (<>
       <h1>----- Site Header -----</h1>
+      <h1>Cart Count: {cart.length}</h1>
+      <h1>Total Price: {totalPrice.toFixed()}</h1>
 
       <ul>
         <li><Link to='/'>Home</Link></li>
@@ -55,6 +74,7 @@ function App() {
         <li><Link to='/datadisplay'>Material Data Display</Link></li>
         <li><Link to='/productdatagrid'>Product Data Grid</Link></li>
         <li><Link to='/autocomplate'>Auto Complate</Link></li>
+        <li><Link to='/cart'>Cart Sample</Link></li>
 
       </ul>
 
@@ -69,6 +89,7 @@ function App() {
         <Route path='/datadisplay' element={<DataDisplay />}></Route>  
         <Route path='/productdatagrid' element={<ProductDataGrid />}></Route>
         <Route path='/autocomplate' element={<AutocomplateSample />}></Route>
+        <Route path='/cart' element={<CartPage />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
       </Routes>
       <h1>----- Site Footer -----</h1>

@@ -11,14 +11,15 @@ function ProductDetail() {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-      
-      axios.get(`https://northwind.vercel.app/api/products/${id}` )
-          .then(res => {
-            setProduct(res.data);
-          })
-          .catch(err => console.log('Error: ', err))
 
-    }, [])
+      axios.get(`https://northwind.vercel.app/api/products/${id}`)
+          .then(res => {
+              setProduct(res.data);
+          })
+          .catch(err => console.log('Error', err))
+
+          // eslint-disable-next-line
+  }, [])
     
   return (
     <>
