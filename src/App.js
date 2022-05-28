@@ -21,6 +21,8 @@ import NoMatch from "./routerSample/NoMatch";
 import ProductList from "./routerSample/ProductList";
 import ProductDetail from "./routerSample/ProductDetail";
 import DataDisplay from "./materialSample/DataDisplay";
+import ProductDataGrid from "./materialSample/ProductDataGrid";
+import AutocomplateSample from "./materialSample/AutocomplateSample";
 //import ProductDetail from "./propsSample/ProductDetail";
 //import PropClickEventSample from "./propsSample/PropClickEventSample";
 //import SupplierList from "./propsSample/SupplierList";
@@ -51,6 +53,9 @@ function App() {
         <li><Link to='/iletisim'>Contact</Link></li>
         <li><Link to='/urunler'>Products</Link></li>
         <li><Link to='/datadisplay'>Material Data Display</Link></li>
+        <li><Link to='/productdatagrid'>Product Data Grid</Link></li>
+        <li><Link to='/autocomplate'>Auto Complate</Link></li>
+
       </ul>
 
 
@@ -61,7 +66,9 @@ function App() {
         <Route path='/iletisim' element={<ContactPage />}></Route>
         <Route path='/urunler' element={<ProductList />}></Route>
         <Route path='/urunler/:id' element={<ProductDetail />}></Route>
-        <Route path='/datadisplay' element={<DataDisplay />}></Route>
+        <Route path='/datadisplay' element={<DataDisplay />}></Route>  
+        <Route path='/productdatagrid' element={<ProductDataGrid />}></Route>
+        <Route path='/autocomplate' element={<AutocomplateSample />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
       </Routes>
       <h1>----- Site Footer -----</h1>

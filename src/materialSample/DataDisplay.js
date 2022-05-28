@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button, Avatar } from '@mui/material'
 
 import React from 'react'
 
@@ -7,7 +7,8 @@ function DataDisplay() {
     <>
         <div>
 
-            <Button variant="contained">Hello Display</Button>
+            <Button color='error' variant="contained">Hello Display</Button>
+            <Avatar>Ç</Avatar>
         </div>
     
     
