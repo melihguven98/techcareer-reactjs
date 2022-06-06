@@ -6,8 +6,6 @@ import { cartContext } from "./store/cartContext";
 
 //---------------- TECHCAREER
 
-
-
 //import SearchTwoButton from './tasks/SearchTask/SearchTwoButton'
 //import AddCategory from "./fetchSample/AddCategory";
 //import ProductList from "./fetchSample/ProductList";
@@ -29,8 +27,8 @@ import RefHookSample from "./otherHooks/RefHookSample";
 import LayoutHookSample from "./otherHooks/LayoutHookSample";
 import AddToDo from "./reduxSample/AddToDo";
 import ToDoList from "./reduxSample/ToDoList";
-
-
+import ImperativeParent from "./otherHooks/ImperativeParent";
+import RefParent from "./refSampleScd/RefParent";
 
 //import ProductDetail from "./propsSample/ProductDetail";
 //import PropClickEventSample from "./propsSample/PropClickEventSample";
@@ -56,9 +54,9 @@ function App() {
 
   
 
-  //context'i kullanma
+  //* context'i kullanma
+  // eslint-disable-next-line
   const {cart, setCart} = useContext(cartContext);
-  //? eslint-disable-next-line
 
   //* Toplam Yazıdırma
   let totalPrice = 0;
@@ -66,12 +64,13 @@ function App() {
   cart.forEach(e => {
       totalPrice = totalPrice + (e.price * e.quantity)
   });
-  
+
+
   
   return (<>
-      <h1>----- Site Header -----</h1>
-      <h1>Cart Count: {cart.length}</h1>
-      <h1>Total Price: {totalPrice.toFixed()}</h1>
+      <h1><i>/------------ Site Header ------------/</i></h1>
+      <h2>Cart Count: {cart.length}</h2>
+      <h2>Total Price: {totalPrice.toFixed()}</h2>
 
       <ul>
         <li><Link to='/'>Home</Link></li>
@@ -84,6 +83,9 @@ function App() {
         <li><Link to='/cart'>Cart Sample</Link></li>
         <li><Link to='/refsample'>Ref Sample</Link></li>
         <li><Link to='/layouthook'>Layout Hook Sample</Link></li>
+        <li><Link to='/imperativeparent'>ImperativeHandle Hook Sample</Link></li>
+        <li><Link to='/refparentsample'>Ref Parent Sample</Link></li>
+        <li>-------------------------------------------------</li>
         <li><Link to='/addtodo'>Add To Do</Link></li>
         <li><Link to='/todolist'>To Do List</Link></li>
       </ul>
@@ -100,12 +102,14 @@ function App() {
         <Route path='/cart' element={<CartPage />}></Route>
         <Route path='/refsample' element={<RefHookSample />}></Route>
         <Route path='/layouthook' element={<LayoutHookSample />}></Route>
+        <Route path='/imperativeparent' element={<ImperativeParent />}></Route>
+        <Route path='/refparentsample' element={<RefParent />}></Route>
         <Route path="/todolist" element={<ToDoList />}></Route>
         <Route path="/addtodo" element={<AddToDo />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
       </Routes>
        
-      <h1>----- Site Footer -----</h1>
+      <h1><i>/------------ Site Footer ------------/</i></h1>
       </>);
 }
 
