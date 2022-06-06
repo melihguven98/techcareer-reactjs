@@ -1,7 +1,8 @@
 //import logo from './logo.svg';
 //import './App.css';
 import { Route, Routes, Link } from "react-router-dom"
-
+import { useContext } from "react";
+import { cartContext } from "./store/cartContext";
 
 //---------------- TECHCAREER
 
@@ -23,9 +24,14 @@ import ProductDetail from "./routerSample/ProductDetail";
 import DataDisplay from "./materialSample/DataDisplay";
 import ProductDataGrid from "./materialSample/ProductDataGrid";
 import AutocomplateSample from "./materialSample/AutocomplateSample";
-import { useContext } from "react";
-import { cartContext } from "./store/cartContext";
 import CartPage from "./routerSample/CartPage";
+import RefHookSample from "./otherHooks/RefHookSample";
+import LayoutHookSample from "./otherHooks/LayoutHookSample";
+import AddToDo from "./reduxSample/AddToDo";
+import ToDoList from "./reduxSample/ToDoList";
+
+
+
 //import ProductDetail from "./propsSample/ProductDetail";
 //import PropClickEventSample from "./propsSample/PropClickEventSample";
 //import SupplierList from "./propsSample/SupplierList";
@@ -61,6 +67,7 @@ function App() {
       totalPrice = totalPrice + (e.price * e.quantity)
   });
   
+  
   return (<>
       <h1>----- Site Header -----</h1>
       <h1>Cart Count: {cart.length}</h1>
@@ -75,10 +82,11 @@ function App() {
         <li><Link to='/productdatagrid'>Product Data Grid</Link></li>
         <li><Link to='/autocomplate'>Auto Complate</Link></li>
         <li><Link to='/cart'>Cart Sample</Link></li>
-
+        <li><Link to='/refsample'>Ref Sample</Link></li>
+        <li><Link to='/layouthook'>Layout Hook Sample</Link></li>
+        <li><Link to='/addtodo'>Add To Do</Link></li>
+        <li><Link to='/todolist'>To Do List</Link></li>
       </ul>
-
-
 
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
@@ -90,8 +98,13 @@ function App() {
         <Route path='/productdatagrid' element={<ProductDataGrid />}></Route>
         <Route path='/autocomplate' element={<AutocomplateSample />}></Route>
         <Route path='/cart' element={<CartPage />}></Route>
+        <Route path='/refsample' element={<RefHookSample />}></Route>
+        <Route path='/layouthook' element={<LayoutHookSample />}></Route>
+        <Route path="/todolist" element={<ToDoList />}></Route>
+        <Route path="/addtodo" element={<AddToDo />}></Route>
         <Route path='*' element={<NoMatch />}></Route>
       </Routes>
+       
       <h1>----- Site Footer -----</h1>
       </>);
 }
